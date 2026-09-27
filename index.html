@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Happy Birthday Eddie ❤️</title>
+  <title>Happy Birthday Bae 💙</title>
 
   <style>
     * {
@@ -14,214 +13,216 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #fff0f6, #ffe1ed, #fff7fb);
-      color: #4a2635;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    .hearts {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
       overflow: hidden;
-      z-index: 0;
-    }
-
-    .heart {
-      position: absolute;
-      bottom: -50px;
-      font-size: 24px;
-      animation: float 8s linear infinite;
-      opacity: 0.7;
-    }
-
-    .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .heart:nth-child(2) { left: 25%; animation-delay: 2s; }
-    .heart:nth-child(3) { left: 45%; animation-delay: 4s; }
-    .heart:nth-child(4) { left: 65%; animation-delay: 1s; }
-    .heart:nth-child(5) { left: 82%; animation-delay: 3s; }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      100% {
-        transform: translateY(-115vh) rotate(360deg);
-      }
-    }
-
-    .container {
+      font-family: "Trebuchet MS", sans-serif;
+      background: linear-gradient(135deg, #071a3d, #0b4f9c, #56b4ff);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       position: relative;
-      z-index: 1;
-      max-width: 700px;
-      margin: auto;
-      padding: 55px 22px;
     }
 
-    .small {
-      font-size: 15px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #a85d78;
-    }
-
-    h1 {
-      font-size: clamp(42px, 12vw, 76px);
-      margin: 15px 0 5px;
-      color: #d94f7d;
-      font-weight: 800;
-    }
-
-    .subtitle {
-      font-size: 20px;
-      margin-bottom: 35px;
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: glow 5s infinite alternate;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.82);
-      border-radius: 28px;
-      padding: 30px 24px;
-      margin: 22px 0;
-      box-shadow: 0 12px 35px rgba(170, 70, 105, 0.15);
-      backdrop-filter: blur(8px);
+      width: 90%;
+      max-width: 500px;
+      padding: 35px 25px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+      animation: appear 1.2s ease;
+      z-index: 2;
     }
 
-    .card h2 {
-      color: #d94f7d;
+    h1 {
       margin-top: 0;
+      font-size: 2.2rem;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .letter {
-      font-size: 19px;
+    .message {
+      font-size: 1.1rem;
       line-height: 1.8;
     }
 
-    .date {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 18px;
-      border-radius: 50px;
-      background: #ffe0eb;
-      color: #b83f67;
-      font-weight: 700;
+    .love {
+      margin-top: 25px;
+      font-size: 1.15rem;
+      font-weight: bold;
     }
 
-    button {
-      border: none;
-      background: #d94f7d;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 50px;
-      font-size: 17px;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(217, 79, 125, 0.25);
+    .tap {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      animation: pulse 2s infinite;
     }
 
-    button:active {
-      transform: scale(0.96);
+    .heart {
+      position: fixed;
+      pointer-events: none;
+      font-size: 24px;
+      z-index: 10;
+      animation: fly 1.5s ease-out forwards;
     }
 
-    #surprise {
-      display: none;
-      margin-top: 20px;
-      font-size: 21px;
-      line-height: 1.6;
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      pointer-events: none;
+      opacity: 0.5;
+      animation: floatUp linear infinite;
+      z-index: 1;
     }
 
-    .footer {
-      margin-top: 45px;
-      font-size: 14px;
-      color: #9b687a;
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(0.9);
+      }
+      to {
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fly {
+      0% {
+        transform: translate(0, 0) scale(0.5) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translate(var(--x), var(--y)) scale(1.4) rotate(25deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 0.5;
+      }
+
+      to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="hearts">
-    <div class="heart">❤️</div>
-    <div class="heart">💗</div>
-    <div class="heart">💋</div>
-    <div class="heart">💖</div>
-    <div class="heart">❤️</div>
+  <div class="glow"></div>
+
+  <div class="card">
+    <h1>Happy Birthday bae ❤️💋</h1>
+
+    <div class="message">
+      Ilysm, thanks for always being there for me and always understanding me.
+      <br><br>
+
+      Always know I will be there for you and I will never leave you.
+      <br><br>
+
+      I loveeee youuuu soo muchhhh 🥹❤️
+      <br><br>
+
+      Muahhhhhh 💋
+    </div>
+
+    <div class="love">
+      Love, Wendy ❤️
+    </div>
+
+    <div class="tap">
+      Tap anywhere 💙✨
+    </div>
   </div>
 
-  <main class="container">
-
-    <div class="small">A little birthday surprise for you...</div>
-
-    <h1>Happy Birthday Eddie ❤️</h1>
-
-    <div class="subtitle">
-      From your Mine 💋
-    </div>
-
-    <div class="card">
-      <h2>💌 A letter for you</h2>
-
-      <div class="letter">
-        Happy birthday bae💋❤️
-        <br><br>
-
-        Ilysm and thanks you for always being there for me and understanding me.
-        <br><br>
-
-        I loveee youu soooo muchhhh than you think,always know I will be there for and I hope we last.
-        <br><br>
-
-        Muaahhhh💋😝
-      </div>
-    </div>
-
-    <div class="card">
-      <h2>🤍 Our little story</h2>
-
-      <p>
-        It all started on
-      </p>
-
-      <div class="date">
-        February 7, 2025 ❤️
-      </div>
-
-      <p>
-        And somehow, you're still my person.
-        🥹💗
-      </p>
-    </div>
-
-    <div class="card">
-      <h2>🥹 One more thing...</h2>
-
-      <button onclick="showSurprise()">
-        Open your surprise 💋
-      </button>
-
-      <div id="surprise">
-        No matter how many miles are between us,
-        you're still someone incredibly special to me. ❤️
-        <br><br>
-        Happy birthday, Eddie.
-        <br>
-        I love youuuuu 😝💋
-      </div>
-    </div>
-
-    <div class="footer">
-      Made with love by your Mine 🤍
-      <br><br>
-      ❤️ 💗 💋 💗 ❤️
-    </div>
-
-  </main>
-
   <script>
-    function showSurprise() {
-      document.getElementById("surprise").style.display = "block";
+    // Hearts when he taps anywhere
+    document.addEventListener("click", function(event) {
+      for (let i = 0; i < 12; i++) {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+
+        const hearts = ["❤️", "💙", "💗", "💜", "🤍"];
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left = event.clientX + "px";
+        heart.style.top = event.clientY + "px";
+
+        const x = (Math.random() - 0.5) * 250;
+        const y = -Math.random() * 250 - 50;
+
+        heart.style.setProperty("--x", x + "px");
+        heart.style.setProperty("--y", y + "px");
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 1500);
+      }
+    });
+
+    // Floating hearts in the background
+    function createFloatingHeart() {
+      const heart = document.createElement("div");
+      heart.className = "floating-heart";
+
+      const hearts = ["💙", "🤍", "💗", "❤️"];
+      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (15 + Math.random() * 25) + "px";
+      heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 11000);
     }
+
+    setInterval(createFloatingHeart, 500);
   </script>
 
 </body>
