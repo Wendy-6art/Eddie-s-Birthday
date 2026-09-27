@@ -24,7 +24,6 @@ body {
   overflow-x: hidden;
 }
 
-/* PAGES */
 .page {
   display: none;
   min-height: 100vh;
@@ -37,7 +36,6 @@ body {
   display: flex;
 }
 
-/* PAGE 1 */
 #page1 {
   justify-content: center;
   align-items: center;
@@ -99,17 +97,11 @@ button {
   color: white;
 }
 
-/* PAGE 2 */
 #page2 {
-  display: none;
   justify-content: flex-start;
   align-items: flex-start;
   background: linear-gradient(135deg, #050505, #061b46, #9d0715);
   overflow-y: auto;
-}
-
-#page2.active {
-  display: flex;
 }
 
 .spider-card {
@@ -149,7 +141,6 @@ button {
   border-left: 4px solid #e52535;
   border-radius: 10px;
   padding: 12px 14px;
-  font-size: 0.98rem;
 }
 
 .number {
@@ -158,7 +149,6 @@ button {
   margin-right: 7px;
 }
 
-/* HEARTS */
 .heart {
   position: fixed;
   pointer-events: none;
@@ -194,10 +184,6 @@ button {
     opacity: 0;
   }
 
-  20% {
-    opacity: 0.45;
-  }
-
   to {
     transform: translateY(-110vh);
     opacity: 0;
@@ -207,8 +193,6 @@ button {
 </head>
 
 <body>
-
-<!-- PAGE 1 -->
 
 <section id="page1" class="page active">
 
@@ -249,9 +233,6 @@ button {
   </div>
 
 </section>
-
-
-<!-- PAGE 2 -->
 
 <section id="page2" class="page">
 
@@ -316,4 +297,145 @@ button {
       <div class="reason"><span class="number">47.</span> Your goals</div>
       <div class="reason"><span class="number">48.</span> Your hopes</div>
       <div class="reason"><span class="number">49.</span> Your intentions</div>
-      <div class="reason"><span class="number">50.</span> Yourno
+      <div class="reason"><span class="number">50.</span> Your empathy</div>
+      <div class="reason"><span class="number">51.</span> Your Success</div>
+      <div class="reason"><span class="number">52.</span> Your Accountability</div>
+      <div class="reason"><span class="number">53.</span> Your playfulness</div>
+      <div class="reason"><span class="number">54.</span> Your responses</div>
+      <div class="reason"><span class="number">55.</span> Your sarcasm</div>
+      <div class="reason"><span class="number">56.</span> Your activness</div>
+      <div class="reason"><span class="number">57.</span> Your Memory</div>
+      <div class="reason"><span class="number">58.</span> Your joy</div>
+      <div class="reason"><span class="number">59.</span> Your care</div>
+      <div class="reason"><span class="number">60.</span> Your gratefulness</div>
+      <div class="reason"><span class="number">61.</span> Your existence</div>
+      <div class="reason"><span class="number">62.</span> Your concern</div>
+      <div class="reason"><span class="number">63.</span> Your handsome facee</div>
+      <div class="reason"><span class="number">64.</span> Your excellence</div>
+      <div class="reason"><span class="number">65.</span> Your beliefs</div>
+      <div class="reason"><span class="number">66.</span> Your Emotions</div>
+      <div class="reason"><span class="number">67.</span> Your Name</div>
+      <div class="reason"><span class="number">68.</span> Your time againn</div>
+      <div class="reason"><span class="number">69.</span> Your “flaws”</div>
+      <div class="reason"><span class="number">70.</span> You're clean</div>
+      <div class="reason"><span class="number">71.</span> Your Openness</div>
+      <div class="reason"><span class="number">72.</span> Your Dedication</div>
+      <div class="reason"><span class="number">73.</span> Your Mature</div>
+      <div class="reason"><span class="number">74.</span> Your presence</div>
+      <div class="reason"><span class="number">75.</span> Your affection</div>
+      <div class="reason"><span class="number">76.</span> Your Promises</div>
+      <div class="reason"><span class="number">77.</span> You're funny</div>
+      <div class="reason"><span class="number">78.</span> Your Actions</div>
+      <div class="reason"><span class="number">79.</span> Your unique</div>
+      <div class="reason"><span class="number">80.</span> Your Childish</div>
+      <div class="reason"><span class="number">81.</span> Your soul</div>
+      <div class="reason"><span class="number">82.</span> Your Teasing</div>
+      <div class="reason"><span class="number">83.</span> You're reliable</div>
+      <div class="reason"><span class="number">84.</span> Your nose</div>
+      <div class="reason"><span class="number">85.</span> Your worthiness</div>
+      <div class="reason"><span class="number">86.</span> Your words</div>
+      <div class="reason"><span class="number">87.</span> Your style</div>
+      <div class="reason"><span class="number">88.</span> Your Bravery</div>
+      <div class="reason"><span class="number">89.</span> Your Calmness</div>
+      <div class="reason"><span class="number">90.</span> Your genuine</div>
+      <div class="reason"><span class="number">91.</span> Your Curious</div>
+      <div class="reason"><span class="number">92.</span> Your gentleness</div>
+      <div class="reason"><span class="number">93.</span> Your compassion</div>
+      <div class="reason"><span class="number">94.</span> Your Wisdom</div>
+      <div class="reason"><span class="number">95.</span> Your Peacefulness</div>
+      <div class="reason"><span class="number">96.</span> Your spark</div>
+      <div class="reason"><span class="number">97.</span> Your neediness</div>
+      <div class="reason"><span class="number">98.</span> Your encouragement</div>
+      <div class="reason"><span class="number">99.</span> Your generosity</div>
+      <div class="reason"><span class="number">100.</span> Yourself, no matter what</div>
+
+    </div>
+
+    <button class="back-button" onclick="showPage(1)">
+      ← Back to your birthday 💙
+    </button>
+
+  </div>
+
+</section>
+
+<script>
+function showPage(number) {
+  document.getElementById("page1").classList.remove("active");
+  document.getElementById("page2").classList.remove("active");
+
+  document.getElementById("page" + number).classList.add("active");
+
+  window.scrollTo(0, 0);
+}
+
+document.addEventListener("click", function(event) {
+
+  if (event.target.closest("button")) {
+    return;
+  }
+
+  for (let i = 0; i < 12; i++) {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    let hearts = ["❤️", "💙", "💗", "💜", "🤍"];
+
+    heart.textContent =
+      hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+
+    heart.style.setProperty(
+      "--x",
+      ((Math.random() - 0.5) * 260) + "px"
+    );
+
+    heart.style.setProperty(
+      "--y",
+      (-Math.random() * 260 - 40) + "px"
+    );
+
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+      heart.remove();
+    }, 1400);
+  }
+});
+
+function createFloatingHeart() {
+
+  let heart = document.createElement("div");
+
+  heart.className = "floating-heart";
+
+  let hearts = ["💙", "🤍", "💗", "❤️"];
+
+  heart.textContent =
+    hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 6) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(function() {
+    heart.remove();
+  }, 11000);
+}
+
+setInterval(createFloatingHeart, 600);
+</script>
+
+</body>
+</html>
