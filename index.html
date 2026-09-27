@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -19,7 +23,7 @@ body {
   color: white;
 }
 
-/* PAGE SYSTEM */
+/* PAGES */
 .page {
   display: none;
   min-height: 100vh;
@@ -35,7 +39,10 @@ body {
   display: flex;
 }
 
-/* PAGE 1 */
+/* =========================
+   PAGE 1
+========================= */
+
 #page1 {
   background: linear-gradient(135deg, #061535, #0757a8, #58baff);
   overflow: hidden;
@@ -54,7 +61,7 @@ body {
   animation: appear 1s ease;
 }
 
-h1 {
+.card h1 {
   font-size: 2.3rem;
   margin-top: 0;
 }
@@ -103,7 +110,10 @@ h1 {
   transform: scale(0.92);
 }
 
-/* PAGE 2 */
+/* =========================
+   PAGE 2
+========================= */
+
 #page2 {
   background:
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 20%),
@@ -146,7 +156,11 @@ h1 {
 }
 
 .reason {
-  background: linear-gradient(90deg, rgba(18,97,181,0.7), rgba(150,5,20,0.65));
+  background: linear-gradient(
+    90deg,
+    rgba(18,97,181,0.7),
+    rgba(150,5,20,0.65)
+  );
   border-left: 4px solid #e52535;
   border-radius: 10px;
   padding: 12px 14px;
@@ -161,6 +175,7 @@ h1 {
 }
 
 /* WEB DECORATIONS */
+
 .web {
   position: absolute;
   color: rgba(255,255,255,0.12);
@@ -179,7 +194,8 @@ h1 {
   transform: rotate(180deg);
 }
 
-/* TAP HEARTS */
+/* HEARTS */
+
 .heart {
   position: fixed;
   pointer-events: none;
@@ -188,7 +204,6 @@ h1 {
   animation: heartFly 1.4s ease-out forwards;
 }
 
-/* FLOATING HEARTS */
 .floating-heart {
   position: fixed;
   bottom: -30px;
@@ -199,11 +214,13 @@ h1 {
 }
 
 /* ANIMATIONS */
+
 @keyframes appear {
   from {
     opacity: 0;
     transform: translateY(30px) scale(0.9);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -211,8 +228,13 @@ h1 {
 }
 
 @keyframes pulse {
-  0%,100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  0%,100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes heartFly {
@@ -220,8 +242,12 @@ h1 {
     transform: translate(0,0) scale(0.5) rotate(0deg);
     opacity: 1;
   }
+
   100% {
-    transform: translate(var(--x),var(--y)) scale(1.4) rotate(30deg);
+    transform:
+      translate(var(--x),var(--y))
+      scale(1.4)
+      rotate(30deg);
     opacity: 0;
   }
 }
@@ -231,11 +257,15 @@ h1 {
     transform: translateY(0) rotate(0deg);
     opacity: 0;
   }
+
   20% {
     opacity: 0.45;
   }
+
   to {
-    transform: translateY(-110vh) rotate(360deg);
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
     opacity: 0;
   }
 }
@@ -245,6 +275,7 @@ h1 {
     opacity: 0;
     transform: translateX(-20px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -255,7 +286,10 @@ h1 {
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- =========================
+     PAGE 1
+========================= -->
+
 <section id="page1" class="page active">
 
   <div class="card">
@@ -263,16 +297,23 @@ h1 {
     <h1>Happy birthday bae ❤️💋</h1>
 
     <div class="message">
-      Ilysm, thanks for always being there for me and always understanding me.
+
+      Ilysm, thanks for always being there for me
+      and always understanding me.
+
       <br><br>
 
-      Always know I will be there for you and I will never leave you.
+      Always know I will be there for you
+      and I will never leave you.
+
       <br><br>
 
       I loveeee youuuu soo muchhhh 🥹❤️
+
       <br><br>
 
       Muahhhhhh 💋
+
     </div>
 
     <div class="love">
@@ -292,7 +333,10 @@ h1 {
 </section>
 
 
-<!-- PAGE 2 -->
+<!-- =========================
+     PAGE 2
+========================= -->
+
 <section id="page2" class="page">
 
   <div class="web one">🕸️</div>
@@ -310,6 +354,9 @@ h1 {
 
     <div class="reasons">
 
+      <div class="reason"><span class="number">1.</span> The way you listen to me</div>
+      <div class="reason"><span class="number">2.</span> The way you make me feel loved</div>
+      <div class="reason"><span class="number">3.</span> The little things you remember</div>
       <div class="reason"><span class="number">4.</span> Your love for me</div>
       <div class="reason"><span class="number">5.</span> Your personality</div>
       <div class="reason"><span class="number">6.</span> Your confidence</div>
@@ -357,13 +404,13 @@ h1 {
       <div class="reason"><span class="number">48.</span> Your hopes</div>
       <div class="reason"><span class="number">49.</span> Your intentions</div>
       <div class="reason"><span class="number">50.</span> Your empathy</div>
-      <div class="reason"><span class="number">51.</span> Your success</div>
-      <div class="reason"><span class="number">52.</span> Your accountability</div>
+      <div class="reason"><span class="number">51.</span> Your Success</div>
+      <div class="reason"><span class="number">52.</span> Your Accountability</div>
       <div class="reason"><span class="number">53.</span> Your playfulness</div>
       <div class="reason"><span class="number">54.</span> Your responses</div>
       <div class="reason"><span class="number">55.</span> Your sarcasm</div>
-      <div class="reason"><span class="number">56.</span> Your activeness</div>
-      <div class="reason"><span class="number">57.</span> Your memory</div>
+      <div class="reason"><span class="number">56.</span> Your activness</div>
+      <div class="reason"><span class="number">57.</span> Your Memory</div>
       <div class="reason"><span class="number">58.</span> Your joy</div>
       <div class="reason"><span class="number">59.</span> Your care</div>
       <div class="reason"><span class="number">60.</span> Your gratefulness</div>
@@ -372,148 +419,19 @@ h1 {
       <div class="reason"><span class="number">63.</span> Your handsome facee</div>
       <div class="reason"><span class="number">64.</span> Your excellence</div>
       <div class="reason"><span class="number">65.</span> Your beliefs</div>
-      <div class="reason"><span class="number">66.</span> Your emotions</div>
-      <div class="reason"><span class="number">67.</span> Your name</div>
+      <div class="reason"><span class="number">66.</span> Your Emotions</div>
+      <div class="reason"><span class="number">67.</span> Your Name</div>
       <div class="reason"><span class="number">68.</span> Your time againn</div>
       <div class="reason"><span class="number">69.</span> Your “flaws”</div>
       <div class="reason"><span class="number">70.</span> You're clean</div>
-      <div class="reason"><span class="number">71.</span> Your openness</div>
-      <div class="reason"><span class="number">72.</span> Your dedication</div>
-      <div class="reason"><span class="number">73.</span> Your maturity</div>
+      <div class="reason"><span class="number">71.</span> Your Openness</div>
+      <div class="reason"><span class="number">72.</span> Your Dedication</div>
+      <div class="reason"><span class="number">73.</span> Your Mature</div>
       <div class="reason"><span class="number">74.</span> Your presence</div>
       <div class="reason"><span class="number">75.</span> Your affection</div>
-      <div class="reason"><span class="number">76.</span> Your promises</div>
+      <div class="reason"><span class="number">76.</span> Your Promises</div>
       <div class="reason"><span class="number">77.</span> You're funny</div>
-      <div class="reason"><span class="number">78.</span> Your actions</div>
-      <div class="reason"><span class="number">79.</span> Your uniqueness</div>
-      <div class="reason"><span class="number">80.</span> Your childish side</div>
-      <div class="reason"><span class="number">81.</span> Your soul</div>
-      <div class="reason"><span class="number">82.</span> Your teasing</div>
-      <div class="reason"><span class="number">83.</span> You're reliable</div>
-      <div class="reason"><span class="number">84.</span> Your nose</div>
-      <div class="reason"><span class="number">85.</span> Your worthiness</div>
-      <div class="reason"><span class="number">86.</span> Your words</div>
-      <div class="reason"><span class="number">87.</span> Your style</div>
-      <div class="reason"><span class="number">88.</span> Your bravery</div>
-      <div class="reason"><span class="number">89.</span> Your calmness</div>
-      <div class="reason"><span class="number">90.</span> Your genuine nature</div>
-      <div class="reason"><span class="number">91.</span> Your curiosity</div>
-      <div class="reason"><span class="number">92.</span> Your gentleness</div>
-      <div class="reason"><span class="number">93.</span> Your compassion</div>
-      <div class="reason"><span class="number">94.</span> Your wisdom</div>
-      <div class="reason"><span class="number">95.</span> Your peacefulness</div>
-      <div class="reason"><span class="number">96.</span> Your spark</div>
-      <div class="reason"><span class="number">97.</span> Your neediness</div>
-      <div class="reason"><span class="number">98.</span> Your encouragement</div>
-      <div class="reason"><span class="number">99.</span> Your generosity</div>
-      <div class="reason"><span class="number">100.</span> Yourself, no matter what</div>
-
-    </div>
-
-    <button class="back-button" onclick="showPage(1)">
-      ← Back to your birthday 💙
-    </button>
-
-  </div>
-</section>
-
-
-<script>
-
-/* PAGE SWITCHING */
-function showPage(number) {
-
-  document.querySelectorAll(".page").forEach(page => {
-    page.classList.remove("active");
-  });
-
-  document.getElementById("page" + number).classList.add("active");
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-
-
-/* HEART EXPLOSION */
-document.addEventListener("click", function(event) {
-
-  /* Don't make buttons create hearts */
-  if (
-    event.target.tagName === "BUTTON" ||
-    event.target.closest("button")
-  ) {
-    return;
-  }
-
-  for (let i = 0; i < 12; i++) {
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    const hearts = [
-      "❤️",
-      "💙",
-      "💗",
-      "💜",
-      "🤍"
-    ];
-
-    heart.innerHTML =
-      hearts[Math.floor(Math.random() * hearts.length)];
-
-    heart.style.left = event.clientX + "px";
-    heart.style.top = event.clientY + "px";
-
-    const x = (Math.random() - 0.5) * 260;
-    const y = -Math.random() * 260 - 40;
-
-    heart.style.setProperty("--x", x + "px");
-    heart.style.setProperty("--y", y + "px");
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 1400);
-  }
-
-});
-
-
-/* FLOATING HEARTS */
-function createFloatingHeart() {
-
-  const heart = document.createElement("div");
-
-  heart.className = "floating-heart";
-
-  const hearts = ["💙", "🤍", "💗", "❤️"];
-
-  heart.innerHTML =
-    hearts[Math.floor(Math.random() * hearts.length)];
-
-  heart.style.left =
-    Math.random() * 100 + "vw";
-
-  heart.style.fontSize =
-    (15 + Math.random() * 25) + "px";
-
-  heart.style.animationDuration =
-    (5 + Math.random() * 6) + "s";
-
-  document.body.appendChild(heart);
-
-  setTimeout(() => {
-    heart.remove();
-  }, 11000);
-}
-
-setInterval(createFloatingHeart, 500);
-
-</script>
-
-</body>
-</html>
+      <div class="reason"><span class="number">78.</span> Your Actions</div>
+      <div class="reason"><span class="number">79.</span> Your unique</div>
+      <div class="reason"><span class="number">80.</span> Your Childish</div>
+      <div class="reason"><span class="number">81.</ 
