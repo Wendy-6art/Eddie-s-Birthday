@@ -1,158 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Bae 💙</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Bae ❤️</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      overflow: hidden;
-      font-family: "Trebuchet MS", sans-serif;
-      background: linear-gradient(135deg, #071a3d, #0b4f9c, #56b4ff);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", sans-serif;
+  overflow-x: hidden;
+  background: #071a3d;
+  color: white;
+}
 
-    .glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: rgba(255, 255, 255, 0.12);
-      border-radius: 50%;
-      filter: blur(60px);
-      animation: glow 5s infinite alternate;
-    }
+/* PAGE SYSTEM */
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
 
-    .card {
-      width: 90%;
-      max-width: 500px;
-      padding: 35px 25px;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
-      animation: appear 1.2s ease;
-      z-index: 2;
-    }
+.page.active {
+  display: flex;
+}
 
-    h1 {
-      margin-top: 0;
-      font-size: 2.2rem;
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
-    }
+/* PAGE 1 */
+#page1 {
+  background: linear-gradient(135deg, #061535, #0757a8, #58baff);
+  overflow: hidden;
+}
 
-    .message {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
+.card {
+  width: 92%;
+  max-width: 500px;
+  padding: 35px 25px;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.14);
+  border: 1px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  z-index: 5;
+  animation: appear 1s ease;
+}
 
-    .love {
-      margin-top: 25px;
-      font-size: 1.15rem;
-      font-weight: bold;
-    }
+h1 {
+  font-size: 2.3rem;
+  margin-top: 0;
+}
 
-    .tap {
-      margin-top: 25px;
-      font-size: 0.9rem;
-      opacity: 0.8;
-      animation: pulse 2s infinite;
-    }
+.message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
 
-    .heart {
-      position: fixed;
-      pointer-events: none;
-      font-size: 24px;
-      z-index: 10;
-      animation: fly 1.5s ease-out forwards;
-    }
+.love {
+  margin-top: 25px;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
 
-    .floating-heart {
-      position: fixed;
-      bottom: -30px;
-      pointer-events: none;
-      opacity: 0.5;
-      animation: floatUp linear infinite;
-      z-index: 1;
-    }
+.tap {
+  margin-top: 25px;
+  opacity: 0.8;
+  animation: pulse 2s infinite;
+}
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(30px) scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
+.next-button,
+.back-button {
+  border: none;
+  padding: 13px 25px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 25px;
+  transition: transform 0.2s;
+}
 
-    @keyframes glow {
-      from {
-        transform: scale(0.9);
-      }
-      to {
-        transform: scale(1.2);
-      }
-    }
+.next-button {
+  background: white;
+  color: #0757a8;
+}
 
-    @keyframes pulse {
-      0%, 100% {
-        opacity: 0.6;
-      }
-      50% {
-        opacity: 1;
-      }
-    }
+.back-button {
+  background: #1677d2;
+  color: white;
+}
 
-    @keyframes fly {
-      0% {
-        transform: translate(0, 0) scale(0.5) rotate(0deg);
-        opacity: 1;
-      }
+.next-button:active,
+.back-button:active {
+  transform: scale(0.92);
+}
 
-      100% {
-        transform: translate(var(--x), var(--y)) scale(1.4) rotate(25deg);
-        opacity: 0;
-      }
-    }
+/* PAGE 2 */
+#page2 {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 20%),
+    linear-gradient(135deg, #080808, #061b46, #9d0715);
+  overflow-y: auto;
+  align-items: flex-start;
+}
 
-    @keyframes floatUp {
-      from {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
+.spider-card {
+  width: 95%;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  background: rgba(0,0,0,0.65);
+  border: 3px solid #e52535;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(229,37,53,0.35);
+  position: relative;
+  z-index: 3;
+}
 
-      20% {
-        opacity: 0.5;
-      }
+.spider-title {
+  font-size: 2rem;
+  color: white;
+  text-shadow:
+    3px 3px 0 #e52535,
+    -2px -2px 0 #1261b5;
+}
 
-      to {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-  </style>
+.subtitle {
+  color: #b8dcff;
+  margin-bottom: 25px;
+}
+
+.reasons {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reason {
+  background: linear-gradient(90deg, rgba(18,97,181,0.7), rgba(150,5,20,0.65));
+  border-left: 4px solid #e52535;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.98rem;
+  animation: slideIn 0.5s ease both;
+}
+
+.number {
+  color: #ff5361;
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+/* WEB DECORATIONS */
+.web {
+  position: absolute;
+  color: rgba(255,255,255,0.12);
+  font-size: 120px;
+  pointer-events: none;
+}
+
+.web.one {
+  top: 10px;
+  left: 5px;
+}
+
+.web.two {
+  bottom: 10px;
+  right: 5px;
+  transform: rotate(180deg);
+}
+
+/* TAP HEARTS */
+.heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100;
+  font-size: 24px;
+  animation: heartFly 1.4s ease-out forwards;
+}
+
+/* FLOATING HEARTS */
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  opacity: 0.45;
+  z-index: 1;
+  animation: floatUp linear forwards;
+}
+
+/* ANIMATIONS */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes heartFly {
+  0% {
+    transform: translate(0,0) scale(0.5) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x),var(--y)) scale(1.4) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="glow"></div>
+<!-- PAGE 1 -->
+<section id="page1" class="page active">
 
   <div class="card">
-    <h1>Happy Birthday bae ❤️💋</h1>
+
+    <h1>Happy birthday bae ❤️💋</h1>
 
     <div class="message">
       Ilysm, thanks for always being there for me and always understanding me.
@@ -172,58 +280,240 @@
     </div>
 
     <div class="tap">
-      Tap anywhere 💙✨
+      Tap anywhere for hearts 💙✨
     </div>
+
+    <button class="next-button" onclick="showPage(2)">
+      Next page → 🕷️
+    </button>
+
   </div>
 
-  <script>
-    // Hearts when he taps anywhere
-    document.addEventListener("click", function(event) {
-      for (let i = 0; i < 12; i++) {
-        const heart = document.createElement("div");
-        heart.className = "heart";
+</section>
 
-        const hearts = ["❤️", "💙", "💗", "💜", "🤍"];
-        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
-        heart.style.left = event.clientX + "px";
-        heart.style.top = event.clientY + "px";
+<!-- PAGE 2 -->
+<section id="page2" class="page">
 
-        const x = (Math.random() - 0.5) * 250;
-        const y = -Math.random() * 250 - 50;
+  <div class="web one">🕸️</div>
+  <div class="web two">🕸️</div>
 
-        heart.style.setProperty("--x", x + "px");
-        heart.style.setProperty("--y", y + "px");
+  <div class="spider-card">
 
-        document.body.appendChild(heart);
+    <h1 class="spider-title">
+      🕷️ 100 Things I Love About You ❤️
+    </h1>
 
-        setTimeout(() => {
-          heart.remove();
-        }, 1500);
-      }
-    });
+    <p class="subtitle">
+      A little list for my favorite person 💙❤️
+    </p>
 
-    // Floating hearts in the background
-    function createFloatingHeart() {
-      const heart = document.createElement("div");
-      heart.className = "floating-heart";
+    <div class="reasons">
 
-      const hearts = ["💙", "🤍", "💗", "❤️"];
-      heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+      <div class="reason"><span class="number">4.</span> Your love for me</div>
+      <div class="reason"><span class="number">5.</span> Your personality</div>
+      <div class="reason"><span class="number">6.</span> Your confidence</div>
+      <div class="reason"><span class="number">7.</span> Your comfort</div>
+      <div class="reason"><span class="number">8.</span> Your positive energy</div>
+      <div class="reason"><span class="number">9.</span> Your handsome face</div>
+      <div class="reason"><span class="number">10.</span> Your honesty</div>
+      <div class="reason"><span class="number">11.</span> Your support</div>
+      <div class="reason"><span class="number">12.</span> Your lips</div>
+      <div class="reason"><span class="number">13.</span> Your voice</div>
+      <div class="reason"><span class="number">14.</span> Your advice</div>
+      <div class="reason"><span class="number">15.</span> Your reassurance</div>
+      <div class="reason"><span class="number">16.</span> Your kindness</div>
+      <div class="reason"><span class="number">17.</span> How you care for me</div>
+      <div class="reason"><span class="number">18.</span> Your courage</div>
+      <div class="reason"><span class="number">19.</span> Your support</div>
+      <div class="reason"><span class="number">20.</span> Your patience</div>
+      <div class="reason"><span class="number">21.</span> Your time</div>
+      <div class="reason"><span class="number">22.</span> Your excitement</div>
+      <div class="reason"><span class="number">23.</span> You're funny</div>
+      <div class="reason"><span class="number">24.</span> Your intelligence</div>
+      <div class="reason"><span class="number">25.</span> Your creativity</div>
+      <div class="reason"><span class="number">26.</span> Your honesty</div>
+      <div class="reason"><span class="number">27.</span> Your silliness</div>
+      <div class="reason"><span class="number">28.</span> Your ideas</div>
+      <div class="reason"><span class="number">29.</span> Your forgiveness</div>
+      <div class="reason"><span class="number">30.</span> Your understanding</div>
+      <div class="reason"><span class="number">31.</span> Your height</div>
+      <div class="reason"><span class="number">32.</span> Your attitude</div>
+      <div class="reason"><span class="number">33.</span> Your compliments</div>
+      <div class="reason"><span class="number">34.</span> You're generous</div>
+      <div class="reason"><span class="number">35.</span> Your awkwardness</div>
+      <div class="reason"><span class="number">36.</span> Your randomness</div>
+      <div class="reason"><span class="number">37.</span> Your humbleness</div>
+      <div class="reason"><span class="number">38.</span> Your effort</div>
+      <div class="reason"><span class="number">39.</span> How you remember the little things</div>
+      <div class="reason"><span class="number">40.</span> Your skills</div>
+      <div class="reason"><span class="number">41.</span> Your trust</div>
+      <div class="reason"><span class="number">42.</span> Your loyalty</div>
+      <div class="reason"><span class="number">43.</span> Your faith</div>
+      <div class="reason"><span class="number">44.</span> Your help</div>
+      <div class="reason"><span class="number">45.</span> Your nicknames</div>
+      <div class="reason"><span class="number">46.</span> Your respectfulness</div>
+      <div class="reason"><span class="number">47.</span> Your goals</div>
+      <div class="reason"><span class="number">48.</span> Your hopes</div>
+      <div class="reason"><span class="number">49.</span> Your intentions</div>
+      <div class="reason"><span class="number">50.</span> Your empathy</div>
+      <div class="reason"><span class="number">51.</span> Your success</div>
+      <div class="reason"><span class="number">52.</span> Your accountability</div>
+      <div class="reason"><span class="number">53.</span> Your playfulness</div>
+      <div class="reason"><span class="number">54.</span> Your responses</div>
+      <div class="reason"><span class="number">55.</span> Your sarcasm</div>
+      <div class="reason"><span class="number">56.</span> Your activeness</div>
+      <div class="reason"><span class="number">57.</span> Your memory</div>
+      <div class="reason"><span class="number">58.</span> Your joy</div>
+      <div class="reason"><span class="number">59.</span> Your care</div>
+      <div class="reason"><span class="number">60.</span> Your gratefulness</div>
+      <div class="reason"><span class="number">61.</span> Your existence</div>
+      <div class="reason"><span class="number">62.</span> Your concern</div>
+      <div class="reason"><span class="number">63.</span> Your handsome facee</div>
+      <div class="reason"><span class="number">64.</span> Your excellence</div>
+      <div class="reason"><span class="number">65.</span> Your beliefs</div>
+      <div class="reason"><span class="number">66.</span> Your emotions</div>
+      <div class="reason"><span class="number">67.</span> Your name</div>
+      <div class="reason"><span class="number">68.</span> Your time againn</div>
+      <div class="reason"><span class="number">69.</span> Your “flaws”</div>
+      <div class="reason"><span class="number">70.</span> You're clean</div>
+      <div class="reason"><span class="number">71.</span> Your openness</div>
+      <div class="reason"><span class="number">72.</span> Your dedication</div>
+      <div class="reason"><span class="number">73.</span> Your maturity</div>
+      <div class="reason"><span class="number">74.</span> Your presence</div>
+      <div class="reason"><span class="number">75.</span> Your affection</div>
+      <div class="reason"><span class="number">76.</span> Your promises</div>
+      <div class="reason"><span class="number">77.</span> You're funny</div>
+      <div class="reason"><span class="number">78.</span> Your actions</div>
+      <div class="reason"><span class="number">79.</span> Your uniqueness</div>
+      <div class="reason"><span class="number">80.</span> Your childish side</div>
+      <div class="reason"><span class="number">81.</span> Your soul</div>
+      <div class="reason"><span class="number">82.</span> Your teasing</div>
+      <div class="reason"><span class="number">83.</span> You're reliable</div>
+      <div class="reason"><span class="number">84.</span> Your nose</div>
+      <div class="reason"><span class="number">85.</span> Your worthiness</div>
+      <div class="reason"><span class="number">86.</span> Your words</div>
+      <div class="reason"><span class="number">87.</span> Your style</div>
+      <div class="reason"><span class="number">88.</span> Your bravery</div>
+      <div class="reason"><span class="number">89.</span> Your calmness</div>
+      <div class="reason"><span class="number">90.</span> Your genuine nature</div>
+      <div class="reason"><span class="number">91.</span> Your curiosity</div>
+      <div class="reason"><span class="number">92.</span> Your gentleness</div>
+      <div class="reason"><span class="number">93.</span> Your compassion</div>
+      <div class="reason"><span class="number">94.</span> Your wisdom</div>
+      <div class="reason"><span class="number">95.</span> Your peacefulness</div>
+      <div class="reason"><span class="number">96.</span> Your spark</div>
+      <div class="reason"><span class="number">97.</span> Your neediness</div>
+      <div class="reason"><span class="number">98.</span> Your encouragement</div>
+      <div class="reason"><span class="number">99.</span> Your generosity</div>
+      <div class="reason"><span class="number">100.</span> Yourself, no matter what</div>
 
-      heart.style.left = Math.random() * 100 + "vw";
-      heart.style.fontSize = (15 + Math.random() * 25) + "px";
-      heart.style.animationDuration = (5 + Math.random() * 6) + "s";
+    </div>
 
-      document.body.appendChild(heart);
+    <button class="back-button" onclick="showPage(1)">
+      ← Back to your birthday 💙
+    </button>
 
-      setTimeout(() => {
-        heart.remove();
-      }, 11000);
-    }
+  </div>
+</section>
 
-    setInterval(createFloatingHeart, 500);
-  </script>
+
+<script>
+
+/* PAGE SWITCHING */
+function showPage(number) {
+
+  document.querySelectorAll(".page").forEach(page => {
+    page.classList.remove("active");
+  });
+
+  document.getElementById("page" + number).classList.add("active");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+
+/* HEART EXPLOSION */
+document.addEventListener("click", function(event) {
+
+  /* Don't make buttons create hearts */
+  if (
+    event.target.tagName === "BUTTON" ||
+    event.target.closest("button")
+  ) {
+    return;
+  }
+
+  for (let i = 0; i < 12; i++) {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = [
+      "❤️",
+      "💙",
+      "💗",
+      "💜",
+      "🤍"
+    ];
+
+    heart.innerHTML =
+      hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = event.clientX + "px";
+    heart.style.top = event.clientY + "px";
+
+    const x = (Math.random() - 0.5) * 260;
+    const y = -Math.random() * 260 - 40;
+
+    heart.style.setProperty("--x", x + "px");
+    heart.style.setProperty("--y", y + "px");
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 1400);
+  }
+
+});
+
+
+/* FLOATING HEARTS */
+function createFloatingHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.className = "floating-heart";
+
+  const hearts = ["💙", "🤍", "💗", "❤️"];
+
+  heart.innerHTML =
+    hearts[Math.floor(Math.random() * hearts.length)];
+
+  heart.style.left =
+    Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (15 + Math.random() * 25) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 6) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, 11000);
+}
+
+setInterval(createFloatingHeart, 500);
+
+</script>
 
 </body>
 </html>
