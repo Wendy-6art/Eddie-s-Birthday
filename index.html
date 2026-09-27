@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,17 +11,17 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: "Trebuchet MS", sans-serif;
-  overflow-x: hidden;
   background: #071a3d;
   color: white;
+  overflow-x: hidden;
 }
 
 /* PAGES */
@@ -28,23 +29,20 @@ body {
   display: none;
   min-height: 100vh;
   width: 100%;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   padding: 25px;
+  text-align: center;
 }
 
 .page.active {
   display: flex;
 }
 
-/* =========================
-   PAGE 1
-========================= */
-
+/* PAGE 1 */
 #page1 {
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(135deg, #061535, #0757a8, #58baff);
+  position: relative;
   overflow: hidden;
 }
 
@@ -53,16 +51,15 @@ body {
   max-width: 500px;
   padding: 35px 25px;
   border-radius: 30px;
-  background: rgba(255,255,255,0.14);
-  border: 1px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
   box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+  position: relative;
   z-index: 5;
-  animation: appear 1s ease;
 }
 
 .card h1 {
-  font-size: 2.3rem;
+  font-size: 2.2rem;
   margin-top: 0;
 }
 
@@ -73,26 +70,23 @@ body {
 
 .love {
   margin-top: 25px;
-  font-weight: bold;
   font-size: 1.15rem;
+  font-weight: bold;
 }
 
 .tap {
   margin-top: 25px;
   opacity: 0.8;
-  animation: pulse 2s infinite;
 }
 
-.next-button,
-.back-button {
+button {
   border: none;
-  padding: 13px 25px;
+  padding: 14px 24px;
   border-radius: 30px;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   margin-top: 25px;
-  transition: transform 0.2s;
 }
 
 .next-button {
@@ -105,21 +99,17 @@ body {
   color: white;
 }
 
-.next-button:active,
-.back-button:active {
-  transform: scale(0.92);
+/* PAGE 2 */
+#page2 {
+  display: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: linear-gradient(135deg, #050505, #061b46, #9d0715);
+  overflow-y: auto;
 }
 
-/* =========================
-   PAGE 2
-========================= */
-
-#page2 {
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12), transparent 20%),
-    linear-gradient(135deg, #080808, #061b46, #9d0715);
-  overflow-y: auto;
-  align-items: flex-start;
+#page2.active {
+  display: flex;
 }
 
 .spider-card {
@@ -127,20 +117,15 @@ body {
   max-width: 650px;
   margin: 20px auto;
   padding: 30px 20px;
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.7);
   border: 3px solid #e52535;
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(229,37,53,0.35);
-  position: relative;
-  z-index: 3;
+  box-shadow: 0 0 30px rgba(229,37,53,0.4);
 }
 
 .spider-title {
   font-size: 2rem;
-  color: white;
-  text-shadow:
-    3px 3px 0 #e52535,
-    -2px -2px 0 #1261b5;
+  text-shadow: 3px 3px 0 #e52535, -2px -2px 0 #1261b5;
 }
 
 .subtitle {
@@ -158,14 +143,13 @@ body {
 .reason {
   background: linear-gradient(
     90deg,
-    rgba(18,97,181,0.7),
-    rgba(150,5,20,0.65)
+    rgba(18,97,181,0.75),
+    rgba(150,5,20,0.7)
   );
   border-left: 4px solid #e52535;
   border-radius: 10px;
   padding: 12px 14px;
   font-size: 0.98rem;
-  animation: slideIn 0.5s ease both;
 }
 
 .number {
@@ -174,28 +158,7 @@ body {
   margin-right: 7px;
 }
 
-/* WEB DECORATIONS */
-
-.web {
-  position: absolute;
-  color: rgba(255,255,255,0.12);
-  font-size: 120px;
-  pointer-events: none;
-}
-
-.web.one {
-  top: 10px;
-  left: 5px;
-}
-
-.web.two {
-  bottom: 10px;
-  right: 5px;
-  transform: rotate(180deg);
-}
-
 /* HEARTS */
-
 .heart {
   position: fixed;
   pointer-events: none;
@@ -213,48 +176,21 @@ body {
   animation: floatUp linear forwards;
 }
 
-/* ANIMATIONS */
-
-@keyframes appear {
+@keyframes heartFly {
   from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
+    transform: translate(0,0) scale(0.5);
+    opacity: 1;
   }
 
   to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes pulse {
-  0%,100% {
-    opacity: 0.5;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
-@keyframes heartFly {
-  0% {
-    transform: translate(0,0) scale(0.5) rotate(0deg);
-    opacity: 1;
-  }
-
-  100% {
-    transform:
-      translate(var(--x),var(--y))
-      scale(1.4)
-      rotate(30deg);
+    transform: translate(var(--x),var(--y)) scale(1.4);
     opacity: 0;
   }
 }
 
 @keyframes floatUp {
   from {
-    transform: translateY(0) rotate(0deg);
+    transform: translateY(0);
     opacity: 0;
   }
 
@@ -263,22 +199,8 @@ body {
   }
 
   to {
-    transform:
-      translateY(-110vh)
-      rotate(360deg);
+    transform: translateY(-110vh);
     opacity: 0;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 </style>
@@ -286,9 +208,7 @@ body {
 
 <body>
 
-<!-- =========================
-     PAGE 1
-========================= -->
+<!-- PAGE 1 -->
 
 <section id="page1" class="page active">
 
@@ -297,7 +217,6 @@ body {
     <h1>Happy birthday bae ❤️💋</h1>
 
     <div class="message">
-
       Ilysm, thanks for always being there for me
       and always understanding me.
 
@@ -313,7 +232,6 @@ body {
       <br><br>
 
       Muahhhhhh 💋
-
     </div>
 
     <div class="love">
@@ -333,14 +251,9 @@ body {
 </section>
 
 
-<!-- =========================
-     PAGE 2
-========================= -->
+<!-- PAGE 2 -->
 
 <section id="page2" class="page">
-
-  <div class="web one">🕸️</div>
-  <div class="web two">🕸️</div>
 
   <div class="spider-card">
 
@@ -403,35 +316,4 @@ body {
       <div class="reason"><span class="number">47.</span> Your goals</div>
       <div class="reason"><span class="number">48.</span> Your hopes</div>
       <div class="reason"><span class="number">49.</span> Your intentions</div>
-      <div class="reason"><span class="number">50.</span> Your empathy</div>
-      <div class="reason"><span class="number">51.</span> Your Success</div>
-      <div class="reason"><span class="number">52.</span> Your Accountability</div>
-      <div class="reason"><span class="number">53.</span> Your playfulness</div>
-      <div class="reason"><span class="number">54.</span> Your responses</div>
-      <div class="reason"><span class="number">55.</span> Your sarcasm</div>
-      <div class="reason"><span class="number">56.</span> Your activness</div>
-      <div class="reason"><span class="number">57.</span> Your Memory</div>
-      <div class="reason"><span class="number">58.</span> Your joy</div>
-      <div class="reason"><span class="number">59.</span> Your care</div>
-      <div class="reason"><span class="number">60.</span> Your gratefulness</div>
-      <div class="reason"><span class="number">61.</span> Your existence</div>
-      <div class="reason"><span class="number">62.</span> Your concern</div>
-      <div class="reason"><span class="number">63.</span> Your handsome facee</div>
-      <div class="reason"><span class="number">64.</span> Your excellence</div>
-      <div class="reason"><span class="number">65.</span> Your beliefs</div>
-      <div class="reason"><span class="number">66.</span> Your Emotions</div>
-      <div class="reason"><span class="number">67.</span> Your Name</div>
-      <div class="reason"><span class="number">68.</span> Your time againn</div>
-      <div class="reason"><span class="number">69.</span> Your “flaws”</div>
-      <div class="reason"><span class="number">70.</span> You're clean</div>
-      <div class="reason"><span class="number">71.</span> Your Openness</div>
-      <div class="reason"><span class="number">72.</span> Your Dedication</div>
-      <div class="reason"><span class="number">73.</span> Your Mature</div>
-      <div class="reason"><span class="number">74.</span> Your presence</div>
-      <div class="reason"><span class="number">75.</span> Your affection</div>
-      <div class="reason"><span class="number">76.</span> Your Promises</div>
-      <div class="reason"><span class="number">77.</span> You're funny</div>
-      <div class="reason"><span class="number">78.</span> Your Actions</div>
-      <div class="reason"><span class="number">79.</span> Your unique</div>
-      <div class="reason"><span class="number">80.</span> Your Childish</div>
-      <div class="reason"><span class="number">81.</ 
+      <div class="reason"><span class="number">50.</span> Yourno
